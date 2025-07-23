@@ -16,14 +16,17 @@ document.querySelectorAll('.tabs a').forEach(tab => {
     });
 });
 
-// Botão "Copiar IP"
+// Copiar IP
 document.getElementById('copy-ip').addEventListener('click', () => {
-    const ip = "jogar.meuservidormc.com";
+    const ip = document.querySelector('.ip').textContent;
     navigator.clipboard.writeText(ip)
         .then(() => {
             alert('IP copiado! Agora é só colar no Minecraft.');
-        })
-        .catch(err => {
-            console.error('Erro ao copiar IP:', err);
         });
 });
+
+// Simular jogadores online (pode substituir por API real)
+setInterval(() => {
+    const onlineCount = Math.floor(Math.random() * 50) + 10;
+    document.getElementById('online-count').textContent = onlineCount;
+}, 3000);
