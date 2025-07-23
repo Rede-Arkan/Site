@@ -3,77 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Servidor MC | Survival, Loja, Eventos</title>
+    <title>Meu Servidor MC | Central</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Ícones (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Barra de Navegação -->
-    <nav>
+    <!-- Menu Lateral (estilo Central do Cart) -->
+    <aside class="sidebar">
         <div class="logo">
-            <h1>MeuServidorMC</h1>
+            <img src="assets/logo.png" alt="Logo">
+            <h2>MeuServidorMC</h2>
         </div>
         <ul class="tabs">
-            <li><a href="#inicio" class="active">Início</a></li>
-            <li><a href="#loja">Loja</a></li>
-            <li><a href="#equipe">Equipe</a></li>
+            <li>
+                <a href="#inicio" class="active">
+                    <i class="fas fa-home"></i>
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="#loja">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Loja</span>
+                </a>
+            </li>
+            <li>
+                <a href="#equipe">
+                    <i class="fas fa-users"></i>
+                    <span>Equipe</span>
+                </a>
+            </li>
+            <li>
+                <a href="#regras">
+                    <i class="fas fa-book"></i>
+                    <span>Regras</span>
+                </a>
+            </li>
         </ul>
-    </nav>
+        <div class="server-status">
+            <div class="status-circle online"></div>
+            <span>ONLINE</span>
+        </div>
+    </aside>
 
-    <!-- Conteúdo das Abas -->
-    <div class="container">
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
         <!-- ABA INÍCIO -->
         <section id="inicio" class="tab-content active">
-            <div class="banner">
-                <h2>Bem-vindo ao <span>MeuServidorMC</span></h2>
-                <p>O melhor servidor Survival 1.20 do Brasil!</p>
-                <div class="server-ip">
-                    <p>IP: <strong>jogar.meuservidormc.com</strong></p>
-                    <button id="copy-ip">Copiar IP</button>
-                </div>
+            <div class="header">
+                <h1><i class="fas fa-home"></i> Início</h1>
             </div>
-            
-            <div class="status">
-                <h3>🟢 ONLINE</h3>
-                <p>Jogadores: <span id="online-players">15</span>/100</p>
+            <div class="content">
+                <div class="card">
+                    <h2>Bem-vindo ao MeuServidorMC!</h2>
+                    <p>IP: <strong class="ip">jogar.meuservidor.com</strong></p>
+                    <button id="copy-ip"><i class="fas fa-copy"></i> Copiar IP</button>
+                </div>
+                <div class="card">
+                    <h3>📊 Estatísticas</h3>
+                    <p>Jogadores online: <span id="online-count">24</span>/100</p>
+                </div>
             </div>
         </section>
 
         <!-- ABA LOJA -->
         <section id="loja" class="tab-content">
-            <h2>🛒 Loja de Vantagens</h2>
-            <div class="shop-items">
-                <div class="item">
-                    <h3>VIP Básico</h3>
-                    <p>✔️ Prefixo no chat</p>
-                    <p>✔️ /hat e /fly</p>
-                    <button>Comprar (R$ 10,00)</button>
-                </div>
-                <div class="item">
-                    <h3>VIP Premium</h3>
-                    <p>✔️ Tudo do VIP Básico +</p>
-                    <p>✔️ Kits semanais</p>
-                    <button>Comprar (R$ 25,00)</button>
+            <div class="header">
+                <h1><i class="fas fa-shopping-cart"></i> Loja</h1>
+            </div>
+            <div class="content">
+                <div class="shop-grid">
+                    <div class="shop-item">
+                        <h3>VIP Básico</h3>
+                        <p class="price">R$ 10,00</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Prefixo [VIP]</li>
+                            <li><i class="fas fa-check"></i> Comando /fly</li>
+                        </ul>
+                        <button>Comprar</button>
+                    </div>
+                    <div class="shop-item">
+                        <h3>VIP Premium</h3>
+                        <p class="price">R$ 25,00</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Tudo do VIP Básico</li>
+                            <li><i class="fas fa-check"></i> Kits exclusivos</li>
+                        </ul>
+                        <button>Comprar</button>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ABA EQUIPE -->
         <section id="equipe" class="tab-content">
-            <h2>👑 Nossa Equipe</h2>
-            <div class="staff">
-                <div class="staff-member">
-                    <img src="imagens/dono.png" alt="Dono">
-                    <h3>Dono</h3>
-                    <p>@NotchBR</p>
-                </div>
-                <div class="staff-member">
-                    <img src="imagens/admin.png" alt="Admin">
-                    <h3>Admin</h3>
-                    <p>@SteveOP</p>
+            <div class="header">
+                <h1><i class="fas fa-users"></i> Equipe</h1>
+            </div>
+            <div class="content">
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <img src="assets/dono.png" alt="Dono">
+                        <h3>Dono</h3>
+                        <p>@NotchBR</p>
+                    </div>
+                    <div class="staff-card">
+                        <img src="assets/admin.png" alt="Admin">
+                        <h3>Admin</h3>
+                        <p>@SteveOP</p>
+                    </div>
                 </div>
             </div>
         </section>
-    </div>
+
+        <!-- ABA REGRAS -->
+        <section id="regras" class="tab-content">
+            <div class="header">
+                <h1><i class="fas fa-book"></i> Regras</h1>
+            </div>
+            <div class="content">
+                <div class="rules-list">
+                    <div class="rule">
+                        <h3>1. Respeito</h3>
+                        <p>Não ofenda outros jogadores ou staff.</p>
+                    </div>
+                    <div class="rule">
+                        <h3>2. Sem Hacks</h3>
+                        <p>Uso de mods ilegais resulta em banimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
